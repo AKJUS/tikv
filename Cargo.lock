@@ -59,6 +59,8 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e89da841a80418a9b391ebaea17f5c112ffaaa96f621d2c285b5174da76b9011"
 dependencies = [
  "cfg-if 1.0.0",
+ "const-random",
+ "getrandom 0.2.11",
  "once_cell",
  "version_check 0.9.4",
  "zerocopy 0.7.32",
@@ -290,10 +292,11 @@ checksum = "1505bd5d3d116872e7271a6d4e16d81d0c8570876c8de68093a09ac269d8aac0"
 
 [[package]]
 name = "atty"
-version = "0.2.13"
+version = "0.2.14"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1803c647a3ec87095e7ae7acfca019e98de5ec9a7d01343f611cf3152ed71a90"
+checksum = "d9b39be18770d11421cdb1b9947a45dd3f37e93092cbf377614828a319d5fee8"
 dependencies = [
+ "hermit-abi 0.1.19",
  "libc 0.2.176",
  "winapi 0.3.9",
 ]
@@ -979,7 +982,7 @@ dependencies = [
  "prometheus",
  "raft",
  "raftstore",
- "rand 0.8.5",
+ "rand 0.10.0",
  "resource_control",
  "slog",
  "slog-global",
@@ -1030,7 +1033,7 @@ dependencies = [
  "protobuf 2.8.0",
  "raft",
  "raftstore",
- "rand 0.8.5",
+ "rand 0.10.0",
  "regex",
  "resolved_ts",
  "serde",
@@ -1668,7 +1671,7 @@ dependencies = [
  "libc 0.2.176",
  "panic_hook",
  "protobuf 2.8.0",
- "rand 0.8.5",
+ "rand 0.10.0",
  "static_assertions",
  "thiserror 1.0.40",
  "tikv_alloc",
@@ -1711,7 +1714,7 @@ dependencies = [
  "pprof",
  "prometheus",
  "protobuf 2.8.0",
- "rand 0.8.5",
+ "rand 0.10.0",
  "serde",
  "serde_json",
  "slog",
@@ -1748,7 +1751,7 @@ dependencies = [
  "parking_lot 0.12.1",
  "pd_client",
  "prometheus",
- "rand 0.8.5",
+ "rand 0.10.0",
  "serde",
  "slog",
  "slog-global",
@@ -1775,6 +1778,26 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "4ca0197aee26d1ae37445ee532fefce43251d24cc7c166799f4d46817f1d3973"
 dependencies = [
  "crossbeam-utils",
+]
+
+[[package]]
+name = "const-random"
+version = "0.1.18"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "87e00182fe74b066627d63b85fd550ac2998d4b0bd86bfed477a0ae4c7c71359"
+dependencies = [
+ "const-random-macro",
+]
+
+[[package]]
+name = "const-random-macro"
+version = "0.1.16"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f9d839f2a20b0aee515dc581a6172f2321f96cab76c1a38a4c584a194955390e"
+dependencies = [
+ "getrandom 0.2.11",
+ "once_cell",
+ "tiny-keccak",
 ]
 
 [[package]]
@@ -2371,7 +2394,7 @@ dependencies = [
  "openssl",
  "prometheus",
  "protobuf 2.8.0",
- "rand 0.8.5",
+ "rand 0.10.0",
  "serde",
  "serde_derive",
  "slog",
@@ -2440,7 +2463,7 @@ dependencies = [
  "proptest",
  "protobuf 2.8.0",
  "raft",
- "rand 0.8.5",
+ "rand 0.10.0",
  "regex",
  "rocksdb",
  "serde",
@@ -2501,7 +2524,7 @@ dependencies = [
  "log_wrappers",
  "protobuf 2.8.0",
  "raft",
- "rand 0.8.5",
+ "rand 0.10.0",
  "serde",
  "slog",
  "slog-global",
@@ -2675,7 +2698,7 @@ dependencies = [
  "lazy_static",
  "openssl",
  "prometheus",
- "rand 0.8.5",
+ "rand 0.10.0",
  "rust-ini",
  "serde",
  "serde_json",
@@ -2741,7 +2764,7 @@ dependencies = [
  "parking_lot 0.12.1",
  "prometheus",
  "prometheus-static-metric",
- "rand 0.8.5",
+ "rand 0.10.0",
  "serde",
  "strum 0.20.0",
  "tempfile",
@@ -3673,6 +3696,15 @@ checksum = "2304e00983f87ffb38b55b444b5e3b60a884b5d30c0fca7d82fe33449bbe55ea"
 
 [[package]]
 name = "hermit-abi"
+version = "0.1.19"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "62b467343b94ba476dcb2500d242dadbb39557df889310ac77c5d99100aaac33"
+dependencies = [
+ "libc 0.2.176",
+]
+
+[[package]]
+name = "hermit-abi"
 version = "0.3.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d231dfb89cfffdbc30e7fc41579ed6066ad03abda9e567ccafae602b97ec5024"
@@ -4181,7 +4213,7 @@ dependencies = [
  "prometheus-static-metric",
  "proptest",
  "raftstore",
- "rand 0.8.5",
+ "rand 0.10.0",
  "security",
  "serde",
  "serde_json",
@@ -6155,7 +6187,7 @@ dependencies = [
  "protobuf 2.8.0",
  "raft",
  "raft-proto",
- "rand 0.8.5",
+ "rand 0.10.0",
  "resource_control",
  "resource_metering",
  "serde",
@@ -6210,7 +6242,7 @@ dependencies = [
  "raft",
  "raft-proto",
  "raftstore",
- "rand 0.8.5",
+ "rand 0.10.0",
  "resource_control",
  "resource_metering",
  "service",
@@ -6591,7 +6623,7 @@ dependencies = [
  "protobuf 2.8.0",
  "raft",
  "raftstore",
- "rand 0.8.5",
+ "rand 0.10.0",
  "security",
  "slog",
  "slog-global",
@@ -6625,7 +6657,7 @@ dependencies = [
  "pin-project",
  "prometheus",
  "protobuf 2.8.0",
- "rand 0.8.5",
+ "rand 0.10.0",
  "serde",
  "serde_json",
  "slog",
@@ -6651,7 +6683,7 @@ dependencies = [
  "pdqselect",
  "pin-project",
  "prometheus",
- "rand 0.8.5",
+ "rand 0.10.0",
  "serde",
  "serde_derive",
  "slog",
@@ -6676,28 +6708,30 @@ dependencies = [
 
 [[package]]
 name = "rhai"
-version = "1.7.0"
+version = "1.19.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9f06953bb8b9e4307cb7ccc0d9d018e2ddd25a30d32831f631ce4fe8f17671f7"
+checksum = "61797318be89b1a268a018a92a7657096d83f3ecb31418b9e9c16dcbb043b702"
 dependencies = [
- "ahash 0.7.8",
- "bitflags 1.3.2",
+ "ahash 0.8.11",
+ "bitflags 2.11.0",
  "instant",
  "num-traits",
+ "once_cell",
  "rhai_codegen",
  "smallvec",
  "smartstring",
+ "thin-vec",
 ]
 
 [[package]]
 name = "rhai_codegen"
-version = "1.4.1"
+version = "2.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "75a39bc2aa9258b282ee5518dac493491a9c4c11a6d7361b9d2644c922fc6488"
+checksum = "a5a11a05ee1ce44058fa3d5961d05194fdbe3ad6b40f904af764d81b86450e6b"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 1.0.103",
+ "syn 2.0.117",
 ]
 
 [[package]]
@@ -7540,7 +7574,7 @@ dependencies = [
  "openssl",
  "prometheus",
  "protobuf 2.8.0",
- "rand 0.8.5",
+ "rand 0.10.0",
  "serde",
  "serde_derive",
  "slog",
@@ -7957,7 +7991,7 @@ dependencies = [
  "kvproto",
  "protobuf 2.8.0",
  "raftstore",
- "rand 0.8.5",
+ "rand 0.10.0",
  "test_raftstore",
  "tidb_query_common",
  "tikv",
@@ -8054,7 +8088,7 @@ dependencies = [
  "protobuf 2.8.0",
  "raft",
  "raftstore",
- "rand 0.8.5",
+ "rand 0.10.0",
  "resolved_ts",
  "resource_control",
  "resource_metering",
@@ -8097,7 +8131,7 @@ dependencies = [
  "raft",
  "raftstore",
  "raftstore-v2",
- "rand 0.8.5",
+ "rand 0.10.0",
  "resolved_ts",
  "resource_control",
  "resource_metering",
@@ -8173,7 +8207,7 @@ dependencies = [
  "grpcio",
  "kvproto",
  "log_wrappers",
- "rand 0.8.5",
+ "rand 0.10.0",
  "rand_isaac",
  "security",
  "slog",
@@ -8228,7 +8262,7 @@ dependencies = [
  "raft_log_engine",
  "raftstore",
  "raftstore-v2",
- "rand 0.8.5",
+ "rand 0.10.0",
  "rand_xorshift",
  "resource_control",
  "resource_metering",
@@ -8279,6 +8313,12 @@ name = "textwrap"
 version = "0.15.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b1141d4d61095b28419e22cb0bbf02755f5e54e0526f97f1e3d1d160e60885fb"
+
+[[package]]
+name = "thin-vec"
+version = "0.2.16"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "259cdf8ed4e4aca6f1e9d011e10bd53f524a2d0637d7b28450f6c64ac298c4c6"
 
 [[package]]
 name = "thiserror"
@@ -8476,7 +8516,7 @@ dependencies = [
  "panic_hook",
  "profiler",
  "protobuf 2.8.0",
- "rand 0.8.5",
+ "rand 0.10.0",
  "regex",
  "serde",
  "serde_json",
@@ -8802,7 +8842,7 @@ dependencies = [
  "prometheus",
  "prometheus-static-metric",
  "protobuf 2.8.0",
- "rand 0.8.5",
+ "rand 0.10.0",
  "regex",
  "serde",
  "serde_json",
@@ -8897,6 +8937,15 @@ dependencies = [
  "quote",
  "standback",
  "syn 1.0.103",
+]
+
+[[package]]
+name = "tiny-keccak"
+version = "2.0.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2c9d3793400a45f954c52e73d068316d76b6f4e36977e3fcebb13a2721e80237"
+dependencies = [
+ "crunchy",
 ]
 
 [[package]]
@@ -9288,7 +9337,7 @@ dependencies = [
  "kvproto",
  "log_wrappers",
  "panic_hook",
- "rand 0.8.5",
+ "rand 0.10.0",
  "slog",
  "thiserror 1.0.40",
  "tikv_alloc",
