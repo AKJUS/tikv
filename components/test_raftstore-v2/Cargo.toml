@@ -42,7 +42,7 @@ protobuf = { version = "2.8", features = ["bytes"] }
 raft = { workspace = true }
 raftstore = { workspace = true, features = ["testexport"] }
 raftstore-v2 = { workspace = true, features = ["testexport"] }
-rand = "0.8"
+rand = "0.10"
 resolved_ts = { workspace = true }
 resource_control = { workspace = true }
 resource_metering = { workspace = true }

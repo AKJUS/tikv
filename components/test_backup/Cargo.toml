@@ -20,7 +20,7 @@ grpcio = { workspace = true }
 kvproto = { workspace = true }
 protobuf = "2"
 raftstore = { workspace = true }
-rand = "0.8"
+rand = "0.10"
 test_raftstore = { workspace = true }
 tidb_query_common = { workspace = true }
 tikv = { workspace = true }

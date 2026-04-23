@@ -99,7 +99,7 @@ raft = { workspace = true }
 raft_log_engine = { workspace = true }
 raftstore = { workspace = true }
 raftstore-v2 = { workspace = true }
-rand = "0.8.3"
+rand = "0.10.0"
 resource_control = { workspace = true }
 server = { workspace = true }
 service = { workspace = true }
