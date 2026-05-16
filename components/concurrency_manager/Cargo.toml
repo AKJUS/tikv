@@ -27,7 +27,7 @@ txn_types = { workspace = true }
 [dev-dependencies]
 criterion = "0.4"
 futures = "0.3"
-rand = "0.8.3"
+rand = "0.10.0"
 tikv_alloc = { workspace = true, features = ["jemalloc"] }
 
 [[bench]]

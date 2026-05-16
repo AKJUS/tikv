@@ -17,4 +17,4 @@ tikv_alloc = { workspace = true }
 bytes = { workspace = true }
 panic_hook = { workspace = true }
 protobuf = "2"
-rand = "0.8"
+rand = "0.10"
