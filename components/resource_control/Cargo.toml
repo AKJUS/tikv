@@ -34,5 +34,5 @@ yatp = { git = "https://github.com/tikv/yatp.git", branch = "master" }
 
 [dev-dependencies]
 file_system = { workspace = true, features = ["testexport"] }
-rand = "0.8"
+rand = "0.10"
 test_pd = { workspace = true }
